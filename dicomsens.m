@@ -1,23 +1,20 @@
 function dicomsens(dicdir,IMAdir, fullfilename,vpid1,indcm,outdcm)
-
-%     dicomsens(dicdir, IMAdir,fullfilename,vpid1,indcm,outdcm) %dicomsens is a function 
-
-% created by Jamila Andoh, 07.06.2021, SNiP for BIDS template 
+% created by JA, 27.07.2022
+% usage: dicomsens(dicdir, IMAdir,fullfilename,vpid1,indcm,outdcm) 
 % read and edit dicom IMA for anonymisation and removes DOB, weight and height
-dictroot='/pandora/data/Template4Bids/SUPER/scripts/matlabscripts/1_data_orga/callscripts/dicomdico';
-%scriptsdir='/zi-flstorage/group_snip/Template4Bids/scripts/matlabscripts/'
-%addpath(genpath('/zi-flstorage/group_snip/Template4Bids/scripts/matlabscripts/'))
-mydict=fullfile(dictroot,'dicom-dictupdate.txt');
+dictroot='/serverdir/projectdir/scripts/matlabscripts/1_data_orga/callscripts/dicomdico';
 
-dicomdict('set',mydict)
+mydict=fullfile(dictroot,'dicom-dictupdate.txt'); %edited siemens dictionary for dwi for example
 
-info = dicominfo(sprintf([IMAdir fullfilename])) ;
-info.PatientID=vpid1;
-info.PatientWeight ='';
-info.PatientSize='';
-info.PatientBirthDate='';
+dicomdict('set',mydict) %set up new siemens dictionary 
 
-dicomwrite(indcm, outdcm, info,'WritePrivate',true) 
+info = dicominfo(sprintf([IMAdir fullfilename])) ; %get information of dicoms. dicominfo is matlab function
+info.PatientID=vpid1; %get patient ID
+info.PatientWeight =''; %get patient weight
+info.PatientSize=''; %get patient height
+info.PatientBirthDate=''; %get  date of birth
+
+dicomwrite(indcm, outdcm, info,'WritePrivate',true) % rewrite the data "info" into outdcm. the data "info" is removed from sensitive information.
 
 
              
