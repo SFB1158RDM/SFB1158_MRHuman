@@ -1,9 +1,8 @@
 #!/bin/bash
-SCRIPTS_DIR=/pandora/data/Template4Bids/.../...scripts/fmripscripts/
-#echo  SUB TIME MODE STARTDATE > ${SCRIPTS_DIR}/processingtime/fmriprep_NOarray.txt #create text  file for gettign indvidual preprocessing time 
-
-bids_root_dir=/pandora/data/Template4Bids/.../
+# by JA 27/07/2022
+SCRIPTS_DIR=/server/project/.../...scripts/fmripscripts/ #define scritps directory 
+bids_root_dir=/server/project/.../  #define BIDS project directory 
 cd ${bids_root_dir}/rawdata
-for sub in sub-SUPR*; do
-	srun --nodelist=zilxhp04 /pandora/data/Template4Bids/.../scripts/fmripscripts/fmriprep_NOarray_job.sbatch  $sub
+for sub in sub-PROJ*; do %loop through all subjects
+	srun --nodelist=zilxhp04 /server/project/.../scripts/fmripscripts/fmriprep_job.sbatch  $sub #runs script in bash mode usign SLURM
 done
