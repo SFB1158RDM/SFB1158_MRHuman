@@ -1,6 +1,6 @@
 function ANONconvBIDS(subdic)
 % Adapted by J.A, 27.07.2022
-%step1: anaonymise source dicom data (remove participant idenfier: DOB, weight, height)
+%step1: anonymise source dicom data (remove participant idenfier: DOB, weight, height)
 %step2: convert to nifti following BIDS stucture 
 %step3: read and extract physiological recordings 
 %step4: removal n=4 first volumes
