@@ -37,6 +37,29 @@ To use the above script, follow these steps:
 - Run the script.
 Note: Make sure to have the required dependencies (such as SPM) installed and added to MATLAB's path.
 
+#### **dicomsens.m script**
+
+This MATLAB function is used for reading and editing DICOM (Digital Imaging and Communications in Medicine) files to perform anonymization. It specifically removes sensitive information such as date of birth (DOB), weight, and height from the DICOM files.
+
+**Use**
+To use this function, follow these steps:
+
+- Ensure that MATLAB is installed on your system.
+- Clone or download the script from the repository.
+- Open the dicomsens.m function in MATLAB.
+- Modify the paths defined in the function according to your specific project structure.
+- Call the dicomsens function with the following input arguments:
+
+- dicdir: Directory path for DICOM dictionary files.
+- IMAdir: Directory path where the original DICOM files are located.
+- fullfilename: Name of the DICOM file to be processed.
+- vpid1: Patient ID.
+- indcm: Input DICOM data.
+- outdcm: Output DICOM file path.
+- 
+The function will read the DICOM file, remove the specified sensitive information (DOB, weight, and height), and write the modified DICOM data to the output file specified by outdcm.
+Note: Make sure to have the required DICOM dictionary files and dependencies set up correctly.
+
 
 ## Usage
 
