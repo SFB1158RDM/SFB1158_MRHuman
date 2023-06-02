@@ -155,6 +155,4 @@ The SFB1158_MRHuman project is licensed under the BSD (LICENSE). Please refer to
 3. https://bids.neuroimaging.io/ 
 4. https://fmriprep.org/en/stable/outputs.html 
 5. https://docs.sylabs.io/guides/3.5/user-guide/introduction.html
-6. 
-
 
